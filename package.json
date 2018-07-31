@@ -1,0 +1,25 @@
+{
+  "name": "book-list",
+  "version": "0.0.1",
+  "description": "A way to keep track of the books you've read.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon -w app.js"
+  },
+  "author": "Robert Benjamin",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  },
+  "engines": {
+    "node": "~8.11.3"
+  }
+}
