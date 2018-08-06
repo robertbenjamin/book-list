@@ -4,7 +4,7 @@ const cors = require('cors')
 const morgan = require('morgan')
 
 const app = express()
-const routes = require('./routes')
+const routes = require('./api/routes')
 
 app.use(cors())
 app.use(morgan('dev'))
@@ -16,6 +16,7 @@ app.use(routes)
 const port = process.env.PORT || 8000
 
 const server = app.listen(port, () => {
+  require('./api/utils/db')
   console.log(`Express server listening on port ${port}`)
 })
 
