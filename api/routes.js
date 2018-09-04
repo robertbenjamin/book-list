@@ -11,7 +11,6 @@ router.post('/books', Book.post)
 router.put('/books/:id', Book.put)
 router.delete('/books/:id', Book.delete)
 
-
 router.get('*', (req, res) => {
   return res.status(404).send('Uh oh, 404')
 })
