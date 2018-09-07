@@ -1,16 +1,19 @@
+const express = require('express')
+const router = express.Router()
+
 const Book =  require('../models/book')
 
-exports.list = async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const books = await Book.find()
     return res.json(books)
   }
-  catch(e) {
+  catch (e) {
     res.status(422).send(e.errors)
   }
-}
+})
 
-exports.get = async (req, res) => {
+router.get('/:id', async (req, res) => {
   const id = req.params.id
 
   try {
@@ -19,24 +22,24 @@ exports.get = async (req, res) => {
     if (!book) return res.sendStatus(404)
     return res.json(book)
   }
-  catch(e) {
+  catch (e) {
     res.status(422).send(e.errors)
   }
-}
+})
 
-exports.post = async (req, res) => {
+router.post('', async (req, res) => {
   const data = req.body
 
   try {
     const book = await Book.create(data)
     return res.json(book)
   }
-  catch(e) {
+  catch (e) {
     res.status(500).send(e.errors)
   }
-}
+})
 
-exports.put = async (req, res) => {
+router.put('/:id', async (req, res) => {
   const id = req.params.id
   const data = req.body
 
@@ -47,12 +50,12 @@ exports.put = async (req, res) => {
 
     return res.json(book)
   }
-  catch(e) {
+  catch (e) {
     res.status(422).send(e.errors)
   }
-}
+})
 
-exports.delete = async (req, res) => {
+router.delete('/:id', async (req, res) => {
   const id = req.params.id
 
   try {
@@ -61,9 +64,9 @@ exports.delete = async (req, res) => {
     if (!book) return res.sendStatus(404)
     res.sendStatus(204)
   }
-  catch(e) {
+  catch (e) {
     res.status(422).send(e.errors)
   }
-}
+})
 
-module.exports = exports
+module.exports = router
