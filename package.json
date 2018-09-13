@@ -2,12 +2,12 @@
   "name": "book-list",
   "version": "0.0.1",
   "description": "A way to keep track of the books you've read.",
-  "main": "app.js",
+  "main": "api.js",
   "scripts": {
     "start": "npm run start:api & npm run start:client",
     "dev": "npm run start:api:dev & npm run start:client",
-    "start:api": "node app.js",
-    "start:api:dev": "nodemon app.js",
+    "start:api": "node api.js",
+    "start:api:dev": "nodemon api.js",
     "start:client": "cd client && npm start"
   },
   "author": "Robert Benjamin",
