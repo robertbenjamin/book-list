@@ -14,7 +14,7 @@ class BookList extends Component {
     );
 
     return (
-      <section className="book-list">
+      <section className='book-list'>
         <h2>Book List</h2>
         <ul>{bookList}</ul>
       </section>

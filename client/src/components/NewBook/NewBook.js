@@ -27,20 +27,20 @@ class NewBook extends Component {
 
   render() {
     return (
-      <div className="NewBook">
+      <div className='NewBook'>
         <h2>Add Book</h2>
         <form onSubmit={this.submitBook}>
           <input
-            type="text"
-            name="title"
+            type='text'
+            name='title'
             value={this.state.title}
             onChange={this.handleInput}></input>
           <input
-            type="text"
-            name="author"
+            type='text'
+            name='author'
             value={this.state.author}
             onChange={this.handleInput}></input>
-          <input type="submit" value="Add"></input>
+          <input type='submit' value='Add'></input>
         </form>
       </div>
     )
