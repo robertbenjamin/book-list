@@ -1,1 +1,1 @@
-export { default } from './NewBook.js'
+export { default } from './NewBook.js';

@@ -1,14 +1,14 @@
-const express = require('express')
-const router = express.Router()
+const express = require('express');
+const router = express.Router();
 
-const BookController = require('./controllers/book')
+const BookController = require('./controllers/book');
 
 module.exports = app => {
-  app.use('/books', BookController)
+  app.use('/books', BookController);
 
   app.get('*', (req, res) => {
-    return res.status(404).send('Uh oh, 404')
+    return res.status(404).send('Uh oh, 404');
   })
-}
+};
 
 
