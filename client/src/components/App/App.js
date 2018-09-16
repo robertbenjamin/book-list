@@ -14,17 +14,17 @@ class App extends Component {
     await this.fetchBooks();
   }
 
-  async fetchBooks() {
+  fetchBooks = async () => {
     const books = await BookAPI.getAll();
     this.setState({ books });
   }
 
-  async createBook(body) {
+  createBook = async body => {
     await BookAPI.post(body);
     this.fetchBooks();
   }
 
-  async removeBook(id) {
+  removeBook = async id => {
     await BookAPI.delete(id);
     this.fetchBooks();
   }
@@ -34,10 +34,10 @@ class App extends Component {
       <div className='App'>
         <h1>booklist</h1>
         <NewBook
-          onSubmit={this.createBook.bind(this)} />
+          onSubmit={this.createBook} />
         <BookList
           books={this.state.books}
-          onRemove={this.removeBook.bind(this)} />
+          onRemove={this.removeBook} />
       </div>
     )
   }
