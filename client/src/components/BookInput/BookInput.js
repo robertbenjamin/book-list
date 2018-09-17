@@ -34,11 +34,6 @@ class BookInput extends Component {
     });
   }
 
-  formIsValid() {
-    const { title, author, dateFinished } = this.state;
-    return title && author && dateFinished;
-  }
-
   render() {
     return (
       <div className='book-input'>
@@ -56,7 +51,7 @@ class BookInput extends Component {
             onChange={this.handleTextInput}></input>
           <DayPickerInput
             onDayChange={this.handleDateInput}
-            selectedDays={this.state.dateFinished} />
+            value={this.state.dateFinished} />
           <input type='submit' value='Add'></input>
         </form>
       </div>
