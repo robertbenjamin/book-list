@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import BookAPI from '../../utils/BookAPI';
 import './App.css'
 
-import NewBook from '../NewBook';
+import BookInput from '../BookInput';
 import BookList from '../BookList';
 
 class App extends Component {
@@ -33,7 +33,7 @@ class App extends Component {
     return (
       <div className='App'>
         <h1>booklist</h1>
-        <NewBook
+        <BookInput
           onSubmit={this.createBook} />
         <BookList
           books={this.state.books}

@@ -4,7 +4,8 @@ const BookList = props => {
   const bookList = props.books.map(book =>
     <li key={book._id}>
       <span>{book.title}, {book.author}</span>&nbsp;
-        <button onClick={() => props.onRemove(book._id)}>Remove</button>
+      <span>Finished: {(new Date(book.dateFinished)).toLocaleDateString()}</span>&nbsp;
+      <button onClick={() => props.onRemove(book._id)}>Remove</button>
     </li>
   );
 
